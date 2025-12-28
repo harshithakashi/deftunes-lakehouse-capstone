@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "User dimension table"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
+  - name: dim_songs
+    description: "Song dimension table"
+    columns:
+      - name: song_id
+        tests:
+          - not_null
+
+  - name: fact_sessions
+    description: "Fact table for user sessions/purchases"
+    columns:
+      - name: session_id
+        tests:
+          - not_null
