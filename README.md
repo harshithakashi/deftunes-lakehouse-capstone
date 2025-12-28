@@ -1,1 +1,114 @@
-# deftunes-lakehouse-capstone
+# DeFtunes Lakehouse Capstone Project
+### End-to-End Data Engineering Pipeline with AWS, Iceberg, Redshift, dbt, Airflow
+
+## 1. Introduction
+
+DeFtunes is a music streaming company that recently expanded into digital song purchases. With this new business capability, the analytics team requires a reliable and scalable data platform to analyze customer purchases, user behavior, and sales trends.
+
+This project implements an end-to-end data engineering pipeline that ingests data from operational systems and APIs, processes it using a medallion (Bronze–Silver–Gold) architecture, and delivers analytics-ready data to downstream consumers using modern cloud-native tools.
+
+---
+
+## 2. Problem Statement
+
+DeFtunes needs a reproducible and scalable data pipeline that can:
+- Ingest data from multiple heterogeneous sources
+- Process raw data into clean, analytics-ready datasets
+- Support incremental data ingestion
+- Enforce data quality checks
+- Enable business analytics and reporting
+- Be fully automated and orchestrated
+
+The solution must follow best practices in data engineering and be deployable using Infrastructure as Code.
+
+---
+
+## 3. Architecture Overview
+
+This project follows a **Lakehouse Medallion Architecture**:
+
+- **Landing (Bronze) Layer**  
+  Raw data is ingested from:
+  - PostgreSQL (RDS) operational database (songs)
+  - REST APIs (users and sessions)
+
+- **Transformation (Silver) Layer**  
+  Cleaned and standardized data is stored as **Apache Iceberg tables** in Amazon S3 using AWS Glue.
+
+- **Serving (Gold) Layer**  
+  Analytics-ready star schema tables are modeled using **dbt** and queried via **Amazon Redshift Spectrum**.
+
+- **Orchestration & Quality**  
+  - Apache Airflow orchestrates daily pipelines
+  - AWS Glue Data Quality validates transformed datasets
+  - dbt creates analytical views for BI consumption
+
+---
+
+## 4. Technologies Used
+
+- **Cloud & Storage**
+  - Amazon S3
+  - Amazon RDS (PostgreSQL)
+  - Amazon Redshift & Redshift Spectrum
+
+- **Data Processing**
+  - AWS Glue ETL
+  - Apache Iceberg
+  - AWS Glue Data Catalog
+
+- **Infrastructure as Code**
+  - Terraform
+
+- **Data Modeling**
+  - dbt (star schema + analytical views)
+
+- **Orchestration**
+  - Apache Airflow (Glue + dbt orchestration)
+
+- **Data Quality**
+  - AWS Glue Data Quality (DQDL rules)
+
+- **Visualization**
+  - Apache Superset (dashboarding)
+
+---
+
+## 5. Pipeline Execution (Conceptual)
+
+1. Extract data from PostgreSQL and REST APIs into S3 landing zone
+2. Transform raw data into Iceberg tables in the transformation zone
+3. Register transformed tables in Glue Data Catalog
+4. Query Iceberg tables from Redshift using Spectrum
+5. Build star schema and business views using dbt
+6. Validate data quality using Glue Data Quality rules
+7. Orchestrate all steps using Airflow DAGs
+8. Visualize analytics using Apache Superset
+
+This project focuses on demonstrating architecture and design patterns rather than operational AWS console execution.
+
+---
+
+## 6. What I Learned
+
+- Designing scalable lakehouse architectures using AWS
+- Implementing medallion architecture with Iceberg
+- Using Terraform for reproducible data infrastructure
+- Modeling analytics data with dbt and Redshift Spectrum
+- Enforcing data quality checks in production pipelines
+- Orchestrating complex pipelines using Apache Airflow
+- Building analytics-ready datasets for BI tools
+
+---
+
+## 7. Challenges Faced
+
+- Managing schema evolution with Iceberg
+- Coordinating Glue, Redshift, dbt, and Airflow together
+- Designing effective data quality rules
+- Handling incremental ingestion logic
+- Maintaining clean separation between layers
+
+---
+
+## 8. Project Structure
