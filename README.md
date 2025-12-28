@@ -26,7 +26,7 @@
 - Deployment notes: `docs/deployment.md`
 
 
-![DeFtunes Architecture]
+DeFtunes Architecture
 ### End-to-End Data Engineering Pipeline with AWS, Iceberg, Redshift, dbt, Airflow
 
 ## 1. Introduction
