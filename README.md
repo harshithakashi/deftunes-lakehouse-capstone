@@ -1,3 +1,31 @@
+![AWS](https://img.shields.io/badge/AWS-Glue%20%7C%20S3%20%7C%20Redshift-orange)
+![IaC](https://img.shields.io/badge/IaC-Terraform-blue)
+![Lakehouse](https://img.shields.io/badge/Lakehouse-Iceberg-lightgrey)
+![Modeling](https://img.shields.io/badge/Modeling-dbt-green)
+![Orchestration](https://img.shields.io/badge/Orchestration-Airflow-purple)
+
+
+## Table of Contents
+- [Introduction](#1-introduction)
+- [Problem Statement](#2-problem-statement)
+- [Architecture Overview](#3-architecture-overview)
+- [Technologies Used](#4-technologies-used)
+- [Pipeline Execution](#5-pipeline-execution-conceptual)
+- [What I Learned](#6-what-i-learned)
+- [Challenges Faced](#7-challenges-faced)
+- [Project Structure](#8-project-structure)
+- [Deployment Notes](#9-notes)
+
+## Repository Contents
+- Glue scripts: `glue/`
+- Terraform skeleton: `terraform/`
+- dbt models: `dbt/`
+- Airflow DAGs: `airflow/dags/`
+- Data quality rules: `data_quality/`
+- Superset notes: `superset/`
+- Deployment notes: `docs/deployment.md`
+
+
 # DeFtunes Lakehouse Capstone Project
 ### End-to-End Data Engineering Pipeline with AWS, Iceberg, Redshift, dbt, Airflow
 
