@@ -26,7 +26,7 @@
 - Deployment notes: `docs/deployment.md`
 
 
-# DeFtunes Lakehouse Capstone Project
+![DeFtunes Architecture](architecture/deftunes-architecture.png)
 ### End-to-End Data Engineering Pipeline with AWS, Iceberg, Redshift, dbt, Airflow
 
 ## 1. Introduction
