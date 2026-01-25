@@ -39,15 +39,19 @@ This project implements an end-to-end data engineering pipeline that ingests dat
 
 ## 2. Problem Statement
 
-DeFtunes needs a reproducible and scalable data pipeline that can:
-- Ingest data from multiple heterogeneous sources
-- Process raw data into clean, analytics-ready datasets
-- Support incremental data ingestion
-- Enforce data quality checks
-- Enable business analytics and reporting
-- Be fully automated and orchestrated
+DeFtunes is a digital music platform that requires a scalable and reliable data
+platform to analyze song purchases, user activity, and revenue trends.
 
-The solution must follow best practices in data engineering and be deployable using Infrastructure as Code.
+Data is generated from multiple operational sources, including a transactional
+database and external APIs, and must be ingested, transformed, and modeled to
+support analytics and reporting use cases.
+
+The objective of this project is to design and implement an **end-to-end data
+lakehouse architecture** that:
+- Ingests data from heterogeneous sources
+- Applies transformations using a medallion (Bronze, Silver, Gold) architecture
+- Stores curated data in a query-optimized format
+- Enables analytics consumption through a structured serving layer
 
 ---
 
