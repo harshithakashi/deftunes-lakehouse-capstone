@@ -52,6 +52,9 @@ The solution must follow best practices in data engineering and be deployable us
 ---
 
 ## 3. Architecture Overview
+## Architecture Diagram
+
+![DeFtunes Lakehouse Architecture](architecture/architecture.png)
 
 This project follows a **Lakehouse Medallion Architecture**:
 
